@@ -1,0 +1,19 @@
+.headingColor {
+  color: white;
+}
+
+.hostInfo {
+  position: fixed;
+  bottom: 30px;
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container > * {
+  width: 20%;
+  color: white;
+}
