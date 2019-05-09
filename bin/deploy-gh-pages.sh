@@ -1,9 +1,17 @@
-#!/bin/sh
-if [ -z "$1" ]
-then
-  echo "Which folder do you want to deploy to GitHub Pages?"
-  exit 1
-fi
-git subtree push --prefix $1 origin gh-pages
+#!/usr/bin/env bash
 
-// npx gh-pages --dist dist/interestedPage --remote $REMOTE
+readonly PROJECT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/.."
+
+declare REMOTE=$1
+
+cd "${PROJECT_ROOT}" || exit 1
+
+# check for a REMOTE given as an argument to the script
+# if it isn't there, default it
+if [[ -z $REMOTE ]]; then
+    REMOTE=origin
+fi
+
+printf '\nDeploying to the remote: %s\n\n' "$REMOTE"
+
+npx gh-pages --dist dist/interestedPage --remote $REMOTE
