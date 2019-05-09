@@ -36,7 +36,7 @@ export class AppComponent {
 
         emailJs.send('gmail', 'template_gNR36YhK', templateParams, 'user_kWg7moTuSFdmWfMgeGdwL')
             .then((response) => {
-                this.clickMessage = `Successfully sent the email, GaurishSiwatch will respond back soon`;
+                this.clickMessage = `Successfully sent the email, Gaurish will respond back soon`;
                 console.log('SUCCESS!', response.status, response.text);
             }, (error) => {
                 this.clickMessage = `Sending email failed please email to gaurishsiwatch@quickenloans.com`;
