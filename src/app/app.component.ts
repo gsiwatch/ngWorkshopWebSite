@@ -34,6 +34,7 @@ export class AppComponent {
             notes: 'I am interested!!'
         };
 
+        // later replace this with different mail server
         emailJs.send('gmail', 'template_gNR36YhK', templateParams, 'user_kWg7moTuSFdmWfMgeGdwL')
             .then((response) => {
                 this.clickMessage = `Successfully sent the email, Gaurish will respond back soon`;
